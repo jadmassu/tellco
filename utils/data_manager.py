@@ -23,6 +23,7 @@ class DataManager:
                 print("Error while writing dataframe to table:", e)
             finally:
                 self.session_manager.close_session(session)
+    
     def read_table_to_dataframe(self, table_name):
         """
         Reads a PostgreSQL table into a pandas dataframe.
