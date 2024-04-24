@@ -19,12 +19,12 @@ class DatabaseManager:
             print(f"Error creating session: {e}")
             return None
 
-    # def close_session(self, session):
-    #     try:
-    #         session.close()
-    #         print("Session closed successfully.")
-    #     except SQLAlchemyError as e:
-    #         print(f"Error closing session: {e}")
+    def close_session(self, session):
+        try:
+            session.close()
+            print("Session closed successfully.")
+        except SQLAlchemyError as e:
+            print(f"Error closing session: {e}")
 
     def execute_sql_file(self, sql_file):
         try:
