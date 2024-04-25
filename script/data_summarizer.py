@@ -181,40 +181,40 @@ def find_min_max_in(df, col):
 
 
 
-import pandas as pd
+# import pandas as pd
 
-def aggregate_user_data(df, group_by_column, aggregation_columns):
-    """
-    Aggregate user session information from a DataFrame.
+# def aggregate_user_data(df, group_by_column, aggregation_columns):
+#     """
+#     Aggregate user session information from a DataFrame.
 
-    Args:
-        df: pandas DataFrame containing user session data.
-        group_by_column: Name of the column to group by.
-        aggregation_columns: Dictionary specifying columns to aggregate and corresponding aggregation functions.
+#     Args:
+#         df: pandas DataFrame containing user session data.
+#         group_by_column: Name of the column to group by.
+#         aggregation_columns: Dictionary specifying columns to aggregate and corresponding aggregation functions.
 
-    Returns:
-        A DataFrame with aggregated information per user.
-    """
-    # Group by the specified column and aggregate the information
-    aggregated_df = df.groupby(group_by_column).agg(aggregation_columns).reset_index()
+#     Returns:
+#         A DataFrame with aggregated information per user.
+#     """
+#     # Group by the specified column and aggregate the information
+#     aggregated_df = df.groupby(group_by_column).agg(aggregation_columns).reset_index()
 
-    return aggregated_df
+#     return aggregated_df
 
-# Example usage
-# Assuming you have a DataFrame called 'user_sessions_df' containing user session data
-# Replace 'user_sessions_df' with your actual DataFrame name
+# # Example usage
+# # Assuming you have a DataFrame called 'user_sessions_df' containing user session data
+# # Replace 'user_sessions_df' with your actual DataFrame name
 
-# Define columns to aggregate and corresponding aggregation functions
-aggregation_columns = {
-    'session_id': 'count',                # Number of sessions
-    'session_duration': 'sum',            # Total session duration
-    'download_data': 'sum',               # Total download data
-    'upload_data': 'sum',                 # Total upload data
-    'data_volume': 'sum'                  # Total data volume
-}
+# # Define columns to aggregate and corresponding aggregation functions
+# aggregation_columns = {
+#     'session_id': 'count',                # Number of sessions
+#     'session_duration': 'sum',            # Total session duration
+#     'download_data': 'sum',               # Total download data
+#     'upload_data': 'sum',                 # Total upload data
+#     'data_volume': 'sum'                  # Total data volume
+# }
 
-# Call the function to aggregate user sessions
-aggregated_user_sessions = aggregate_user_data(user_sessions_df, 'user_id', aggregation_columns)
+# # Call the function to aggregate user sessions
+# aggregated_user_sessions = aggregate_user_data(user_sessions_df, 'user_id', aggregation_columns)
 
-# Print the result
-print(aggregated_user_sessions)
+# # Print the result
+# print(aggregated_user_sessions)
