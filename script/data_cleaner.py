@@ -9,7 +9,13 @@ class DataCleaner:
             self.df = None
         else:
             self.df = df
-    
+    def get_missing_values(self):
+        missing_values_count = self.df.isnull().sum()
+        total_rows = self.df.shape[0]
+        missing_values_percentage = (missing_values_count / total_rows) * 100
+        missing_values_df = pd.DataFrame({'Missing Values': missing_values_count, 'Missing Values Percentage': missing_values_percentage})
+        return missing_values_df
+
     def handle_missing_values_numbers(self, strategy='mean', axis=0):
         try:
             if strategy == 'mean':
