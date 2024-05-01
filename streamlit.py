@@ -1,3 +1,4 @@
+from dashboard.user_behavior import getTopCustomers
 import streamlit as st
 import pandas as pd
 import os, sys
@@ -28,10 +29,11 @@ def main():
   
     if options == "All Data":
         reply_counts(data)
-   
+    elif options == "User Behavior":
+        getTopCustomers() 
 
 def get_sidebar():
-    selected_option = st.sidebar.selectbox("Select an option", ["All Data", "Top Users", "Top Messages","Sender Counts"])
+    selected_option = st.sidebar.selectbox("Select an option", ["All Data", "User Behavior", "Top Messages","Sender Counts"])
     return selected_option
 
 def get_data():
